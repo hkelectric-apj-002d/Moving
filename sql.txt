@@ -1,0 +1,35 @@
+  select * from IAMSmartProfile order by UpdateInfo_CreationTimestamp desc
+  -- fast register
+  --success redirect
+  --update [IAMSmartProfile] set CheckResultCode ='3', Code ='D00000', [Status]='SUCCESS' where BusinessID ='f9498b6402a546278a8630f6d7898c3e'
+
+  --error redirect
+   --User rejected profile request
+  --update [IAMSmartProfile] set CheckResultCode ='1', Code ='D50001', [Status]='ERROR' where BusinessID ='c7b14cc8cb064975bd009432bf2e4ebc'
+
+   --Failed to request profile
+  --update [IAMSmartProfile] set CheckResultCode ='1', Code ='D50002', [Status]='ERROR' where BusinessID ='c7b14cc8cb064975bd009432bf2e4ebc'
+
+   --Profile request timeout
+  --update [IAMSmartProfile] set CheckResultCode ='1', Code ='D50003', [Status]='ERROR' where BusinessID ='c7b14cc8cb064975bd009432bf2e4ebc'
+
+  -- address proof register
+  --success redirect
+   --Correct Name and has valid CAs
+  --update [IAMSmartProfile] set CheckResultCode ='5', Code ='D00000', [Status]='SUCCESS', SerializedData='"ABCD205"' where BusinessID ='2b1efe562116457285dc565e461c603d'
+
+  --error redirect
+   --No bills within 3 months
+  --update [IAMSmartProfile] set CheckResultCode ='6', Code ='D00000', [Status]='ERROR' where BusinessID ='9c58efe4b20a44bbb9df14f025e50348'
+  
+   --/bill image is not available
+  --update [IAMSmartProfile] set CheckResultCode ='7', Code ='D00000', [Status]='ERROR' where BusinessID ='c7b14cc8cb064975bd009432bf2e4ebc'
+  
+   --No lived electricity account
+  --update [IAMSmartProfile] set CheckResultCode ='8', Code ='D00000', [Status]='ERROR' where BusinessID ='c7b14cc8cb064975bd009432bf2e4ebc'
+
+   --No name
+  --update [IAMSmartProfile] set CheckResultCode ='2', Code ='D00000', [Status]='ERROR' where BusinessID ='c7b14cc8cb064975bd009432bf2e4ebc'
+
+
+
